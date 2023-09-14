@@ -1,0 +1,47 @@
+---
+sidebar_position: 3
+sidebar_label: VKPR devportal demo install
+title: VKPR devportal demo install
+---
+
+# VKPR devportal demo install
+
+
+## Descrição
+
+Instale o gráfico de demonstração do DevPortal em um cluster Okteto. Esta demonstração usará Github (para repositórios de código) e Okteto Cloud (para tempo de execução), para estar disponível gratuitamente para todos. Para obter mais informações sobre o devportal, clique [aqui](https://docs.platform.vee.codes/devportal/intro).
+
+## Comandos
+
+Comando interativo:
+
+```bash
+  instalação de demonstração do vkpr devportal [sinalizadores]
+```
+
+## Referência de valores
+
+### Flags
+
+```sh
+  --github_client_organization      Especifica a organização ou usuário no github
+  --github_client_id                Especifica o GitHub OAuth App Client ID 
+  --github_client_secret            Especifica o GitHub OAuth App Client Secret 
+  --github_token                    Especifica o token de acesso do GitHub
+  --password                        Especifica a senha do banco de dados que será criado para o devportal
+```
+
+---
+:::info Sobre o comando
+`Versão do Chart`:  0.9.0 <br/>
+`Versão da aplicação`: v0.7.1 <br/>
+`Helm Chart`: [veecode-plataform/devportal](https://artifacthub.io/packages/helm/veecode-platform/devportal) <br/>
+:::
+
+## Veja também
+
+- [VKPR devportal remove](/docs/commands/devportal/remove) - Desinstala o DevPortal do cluster.
+- [VKPR devportal install](/docs/commands/devportal/install) - Instala o devportal no cluster.
+
+
+
