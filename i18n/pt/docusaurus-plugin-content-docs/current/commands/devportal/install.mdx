@@ -8,7 +8,7 @@ title: VKPR devportal install
 
 ## Descrição
 
-Instala o DevPortal no cluster. Para mais informações sobre o DevPortal, clique [aqui](https://backstage.io/docs/overview/what-is-backstage).
+Instala o DevPortal no cluster. Para mais informações sobre o DevPortal, clique [aqui](https://docs.platform.vee.codes/devportal/intro).
 
 ## Comando
 
@@ -33,7 +33,20 @@ Comando não interativo ou utilizando o `VKPR Values`:
   --dry_run              Simula uma instalação
   --domain               Define o endereço da aplicação
   --secure               Utilizar HTTPS na aplicação
-  --github_spechouseurl  Específica o endereço da Swagger Spec no github
+  --provider             Especifica o provedor git para modelos de publicação (Github/Gitlab)
+  --git_repo             Especifica o nome do repositório com o catálogo
+  --git_branch           Especifica o nome da ramificação do repositório
+
+  --provedor=github
+  --client_organization  Especifica sua organização Github
+  --github_client_id     Especifica o clientId do provedor de autenticação do Github
+  --github_client_secret Especifica o clientSecret do provedor de autenticação Github 
+  --github_token         Especifica seu token de acesso pessoal do Github
+
+  --provider=gitlab
+  --client_groups        Especifica seus grupos do Gitlab
+  --gitlab_token         Especifica seu token de acesso pessoal do Gitlab
+
 ```
 
 ### Arquivo de configuração
@@ -68,27 +81,11 @@ As seguintes variáveis são suportadas:
 - `namespace` - **VKPR_ENV_DEVPORTAL_NAMESPACE**
 - `ingressClassName` - **VKPR_ENV_DEVPORTAL_INGRESS_CLASS_NAME**
 
-## Configurando credenciais do provedor
-
-**CUIDADO: A configuração manual de credenciais substituirá as credenciais já salvas na memória**
-
-#### Okta
-
-```bash
-  rit set credential --provider="okta" --fields="clientid,clientsecret,audience" --values="seu-clientid,seu-clientsecret,seu-audienc"
-```
-
-#### Github
-
-```bash
-  rit set credential --provider="github" --fields="token" --values="seu-token"
-```
-
 ---
 
 :::info Sobre o comando
-`Versão do Chart`: 0.1.2 <br/>
-`Versão da aplicação`: v1.0.0 <br/>
+`Versão do Chart`: 0.9.0 <br/>
+`Versão da aplicação`: v0.7.1 <br/>
 `Helm Chart`: [veecode-plataform/devportal](https://vfipaas.github.io/public-charts/) <br/>
 :::
 

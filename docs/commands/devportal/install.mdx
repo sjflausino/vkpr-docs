@@ -8,7 +8,7 @@ title: VKPR devportal install
 
 ## Description
 
-Install devportal into cluster. For more information about devportal, click [here](https://github.com/traefik/whoami).
+Install devportal into cluster. For more information about devportal, click [here](https://docs.platform.vee.codes/devportal/intro).
 
 ## Commands
 
@@ -33,7 +33,20 @@ Non-interactive without setting values or using `VKPR Values`:
   --dry_run              Simulate an install
   --domain               Set the application address
   --secure               Using HTTPS in the application
-  --github_spechouseurl  Specifies the address of the Swagger Spec on github
+  --provider             Specifies the git provider for publishing templates (Github/Gitlab)
+  --git_repo             Specifies the name of the repository with the catalog
+  --git_branch           Specifies the name of the repository branch
+
+  --provider=github
+  --client_organization  Specifies your Github organization
+  --github_client_id     Specifies your Github auth provider clientId
+  --github_client_secret Specifies your Github auth provider clientSecret
+  --github_token         Specifies your Github personal access token
+
+  --provider=gitlab
+  --client_groups        Specifies yourGitlab groups
+  --gitlab_token         Specifies your Gitlab personal access token
+
 ```
 
 ### Values File
@@ -68,25 +81,11 @@ The following variables are supported:
 - `namespace` - **VKPR_ENV_DEVPORTAL_NAMESPACE**
 - `ingressClassName` - **VKPR_ENV_DEVPORTAL_INGRESS_CLASS_NAME**
 
-## Setting DevPortal credentials
-
-### Okta
-
-```bash
-  rit set credential --provider="okta" --fields="clientid,clientsecret,audience" --values="my-clientid,my-clientsecret,my-audienc"
-```
-
-### Github
-
-```bash
-  rit set credential --provider="github" --fields="token" --values="my-token"
-```
-
 ---
 
 :::info About the Formula
-`Chart Version`: 0.1.2 <br/>
-`Application Version`: v1.0.0 <br/>
+`Chart Version`: 0.9.0 <br/>
+`Application Version`: v0.7.1 <br/>
 `Helm Chart`: [veecode-plataform/devportal](https://vfipaas.github.io/public-charts/) <br/>
 :::
 
